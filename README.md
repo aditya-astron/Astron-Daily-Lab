@@ -1,2 +1,15 @@
-# Astron-Daily-Lab
-You'll find crazsy Daily updates on thingys like Space Science and electronics , ECLSS Systems etc and lots and lots in the domain of science not the one in your textbook but one that is cool !!!! ~Astron &lt;3
+# Astron Daily Lab
+
+One engineering project a day across space systems, electronics and
+computation: orbital mechanics, propulsion, ECLSS, comms, power, control,
+signal processing and more. Each project lives in `projects/NNN-name/` with
+working source, a test or verification against reference values, and a short
+README.
+
+~Astron
+
+## Project log
+
+| # | Date | Domain | Project | Language |
+|---|------|--------|---------|----------|
+| 001 | 2026-10-30 | ECLSS | [LiOH CO2 scrubber sizing for a 4-crew 30-day mission](projects/001-lioh-co2-scrubber-sizing/) | Python |
