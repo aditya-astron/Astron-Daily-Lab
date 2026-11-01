@@ -14,3 +14,4 @@ README.
 |---|------|--------|---------|----------|
 | 001 | 2026-10-30 | ECLSS | [LiOH CO2 scrubber sizing for a 4-crew 30-day mission](projects/001-lioh-co2-scrubber-sizing/) | Python |
 | 002 | 2026-10-31 | Telemetry framing | [CCSDS TM link: packet mux, CADU frame sync and CRC-checked demux](projects/002-ccsds-tm-frame-link/) | C |
+| 003 | 2026-11-01 | Orbital mechanics | [Lambert targeting for a LEO rendezvous transfer](projects/003-lambert-rendezvous-targeting/) | Python |
