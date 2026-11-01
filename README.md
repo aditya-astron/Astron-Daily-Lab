@@ -16,3 +16,4 @@ README.
 | 002 | 2026-10-31 | Telemetry framing | [CCSDS TM link: packet mux, CADU frame sync and CRC-checked demux](projects/002-ccsds-tm-frame-link/) | C |
 | 003 | 2026-11-01 | Orbital mechanics | [Lambert targeting for a LEO rendezvous transfer](projects/003-lambert-rendezvous-targeting/) | Python |
 | 004 | 2026-11-01 | Spacecraft power systems | [Solar array MPPT through a LEO eclipse cycle](projects/004-solar-array-mppt/) | Python |
+| 005 | 2026-11-01 | Attitude determination | [Wahba's problem: TRIAD, Davenport q-method and QUEST with covariance checks](projects/005-wahba-attitude-determination/) | Rust |
