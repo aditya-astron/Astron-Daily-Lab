@@ -18,3 +18,4 @@ README.
 | 004 | 2026-11-01 | Spacecraft power systems | [Solar array MPPT through a LEO eclipse cycle](projects/004-solar-array-mppt/) | Python |
 | 005 | 2026-11-01 | Attitude determination | [Wahba's problem: TRIAD, Davenport q-method and QUEST with covariance checks](projects/005-wahba-attitude-determination/) | Rust |
 | 006 | 2026-11-02 | Rocket propulsion and staging | [Optimal mass staging of a three-stage launcher (Lagrange multiplier method)](projects/006-optimal-launcher-staging/) | C++ |
+| 007 | 2026-11-02 | Thermal analysis | [Transient orbital thermal model of a nadir-pointing 3U CubeSat](projects/007-cubesat-orbital-thermal/) | Python |
