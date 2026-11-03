@@ -20,3 +20,4 @@ README.
 | 006 | 2026-11-02 | Rocket propulsion and staging | [Optimal mass staging of a three-stage launcher (Lagrange multiplier method)](projects/006-optimal-launcher-staging/) | C++ |
 | 007 | 2026-11-02 | Thermal analysis | [Transient orbital thermal model of a nadir-pointing 3U CubeSat](projects/007-cubesat-orbital-thermal/) | Python |
 | 008 | 2026-11-02 | Error correction | [CCSDS K=7 R=1/2 convolutional code: Viterbi decoding with hard, 3-bit and soft decisions](projects/008-ccsds-viterbi-decoder/) | C |
+| 009 | 2026-11-03 | Kalman filtering and sensor fusion | [Multiplicative EKF fusing a drifting gyro with a star tracker, checked against the Riccati steady state](projects/009-mekf-gyro-star-tracker/) | Python |
