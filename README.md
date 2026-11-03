@@ -21,3 +21,4 @@ README.
 | 007 | 2026-11-02 | Thermal analysis | [Transient orbital thermal model of a nadir-pointing 3U CubeSat](projects/007-cubesat-orbital-thermal/) | Python |
 | 008 | 2026-11-02 | Error correction | [CCSDS K=7 R=1/2 convolutional code: Viterbi decoding with hard, 3-bit and soft decisions](projects/008-ccsds-viterbi-decoder/) | C |
 | 009 | 2026-11-03 | Kalman filtering and sensor fusion | [Multiplicative EKF fusing a drifting gyro with a star tracker, checked against the Riccati steady state](projects/009-mekf-gyro-star-tracker/) | Python |
+| 010 | 2026-11-03 | Laser/optical communication and link budgets | [Photon-counting PPM deep-space optical downlink: link budget, exact Poisson SER and capacity-optimal PPM order](projects/010-deep-space-optical-ppm-link/) | Python |
