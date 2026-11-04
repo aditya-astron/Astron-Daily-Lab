@@ -23,3 +23,4 @@ README.
 | 009 | 2026-11-03 | Kalman filtering and sensor fusion | [Multiplicative EKF fusing a drifting gyro with a star tracker, checked against the Riccati steady state](projects/009-mekf-gyro-star-tracker/) | Python |
 | 010 | 2026-11-03 | Laser/optical communication and link budgets | [Photon-counting PPM deep-space optical downlink: link budget, exact Poisson SER and capacity-optimal PPM order](projects/010-deep-space-optical-ppm-link/) | Python |
 | 011 | 2026-11-03 | Embedded firmware | [Fixed-point Q16.16 PI speed loop for a reaction wheel with anti-windup, checked against analytic closed-loop responses](projects/011-fixed-point-wheel-speed-pi/) | C |
+| 012 | 2026-11-04 | Radiation shielding | [Solar proton event dose behind aluminium vs polyethylene: Bethe stopping, CSDA transport and isotropic slab dose](projects/012-spe-proton-shielding/) | Python |
