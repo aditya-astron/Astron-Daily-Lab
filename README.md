@@ -25,3 +25,4 @@ README.
 | 011 | 2026-11-03 | Embedded firmware | [Fixed-point Q16.16 PI speed loop for a reaction wheel with anti-windup, checked against analytic closed-loop responses](projects/011-fixed-point-wheel-speed-pi/) | C |
 | 012 | 2026-11-04 | Radiation shielding | [Solar proton event dose behind aluminium vs polyethylene: Bethe stopping, CSDA transport and isotropic slab dose](projects/012-spe-proton-shielding/) | Python |
 | 013 | 2026-11-04 | Navigation / Signal processing | [GPS L1 C/A Gold codes and FFT parallel code-phase acquisition with CFAR detection, checked against chi-square Pd/Pfa](projects/013-gps-ca-acquisition/) | Python |
+| 014 | 2026-11-04 | ECLSS | [Oxygen loop closure: PEM electrolysis and Sabatier CO2 reduction at chemical equilibrium, with the 50% hydrogen-limited ceiling](projects/014-oxygen-loop-closure/) | Python |
