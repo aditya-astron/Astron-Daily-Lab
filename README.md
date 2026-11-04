@@ -24,3 +24,4 @@ README.
 | 010 | 2026-11-03 | Laser/optical communication and link budgets | [Photon-counting PPM deep-space optical downlink: link budget, exact Poisson SER and capacity-optimal PPM order](projects/010-deep-space-optical-ppm-link/) | Python |
 | 011 | 2026-11-03 | Embedded firmware | [Fixed-point Q16.16 PI speed loop for a reaction wheel with anti-windup, checked against analytic closed-loop responses](projects/011-fixed-point-wheel-speed-pi/) | C |
 | 012 | 2026-11-04 | Radiation shielding | [Solar proton event dose behind aluminium vs polyethylene: Bethe stopping, CSDA transport and isotropic slab dose](projects/012-spe-proton-shielding/) | Python |
+| 013 | 2026-11-04 | Navigation / Signal processing | [GPS L1 C/A Gold codes and FFT parallel code-phase acquisition with CFAR detection, checked against chi-square Pd/Pfa](projects/013-gps-ca-acquisition/) | Python |
