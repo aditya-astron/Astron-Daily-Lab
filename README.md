@@ -26,3 +26,4 @@ README.
 | 012 | 2026-11-04 | Radiation shielding | [Solar proton event dose behind aluminium vs polyethylene: Bethe stopping, CSDA transport and isotropic slab dose](projects/012-spe-proton-shielding/) | Python |
 | 013 | 2026-11-04 | Navigation / Signal processing | [GPS L1 C/A Gold codes and FFT parallel code-phase acquisition with CFAR detection, checked against chi-square Pd/Pfa](projects/013-gps-ca-acquisition/) | Python |
 | 014 | 2026-11-04 | ECLSS | [Oxygen loop closure: PEM electrolysis and Sabatier CO2 reduction at chemical equilibrium, with the 50% hydrogen-limited ceiling](projects/014-oxygen-loop-closure/) | Python |
+| 015 | 2026-11-05 | Electronics and circuit analysis | [Damped LC input filter vs. constant-power-load instability: nodal Zout, optimal Rd-Cd damping, Middlebrook and Routh checks](projects/015-input-filter-cpl-stability/) | C++ |
