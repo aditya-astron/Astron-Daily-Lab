@@ -28,3 +28,4 @@ README.
 | 014 | 2026-11-04 | ECLSS | [Oxygen loop closure: PEM electrolysis and Sabatier CO2 reduction at chemical equilibrium, with the 50% hydrogen-limited ceiling](projects/014-oxygen-loop-closure/) | Python |
 | 015 | 2026-11-05 | Electronics and circuit analysis | [Damped LC input filter vs. constant-power-load instability: nodal Zout, optimal Rd-Cd damping, Middlebrook and Routh checks](projects/015-input-filter-cpl-stability/) | C++ |
 | 016 | 2026-11-05 | Orbital mechanics | [Sun-synchronous repeat ground track design: J2 secular solve, sub-cycle analysis and full-cycle numerical propagation check](projects/016-sso-repeat-ground-track/) | Rust |
+| 017 | 2026-11-06 | Attitude control | [Rate- and torque-limited eigenaxis slew with reaction wheels: gyroscopic cancellation, braking-curve rate loop and bang-coast-bang bound](projects/017-eigenaxis-slew-control/) | C |
