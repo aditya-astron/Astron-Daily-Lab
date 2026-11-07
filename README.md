@@ -30,3 +30,4 @@ README.
 | 016 | 2026-11-05 | Orbital mechanics | [Sun-synchronous repeat ground track design: J2 secular solve, sub-cycle analysis and full-cycle numerical propagation check](projects/016-sso-repeat-ground-track/) | Rust |
 | 017 | 2026-11-06 | Attitude control | [Rate- and torque-limited eigenaxis slew with reaction wheels: gyroscopic cancellation, braking-curve rate loop and bang-coast-bang bound](projects/017-eigenaxis-slew-control/) | C |
 | 018 | 2026-11-06 | Numerical methods | [Symplectic vs. RK4 propagation of a Molniya orbit: leapfrog and Yoshida-4 against exact Kepler f and g, with order, energy, angular momentum and reversibility checks](projects/018-symplectic-orbit-integrators/) | C++ |
+| 019 | 2026-11-07 | RF link budgets | [Mars X-band downlink over a synodic cycle: DSN 34 m link budget, BI-AWGN coding threshold, VDR pass volume and conjunction outage](projects/019-mars-xband-link-volume/) | Python |
