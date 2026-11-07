@@ -31,3 +31,4 @@ README.
 | 017 | 2026-11-06 | Attitude control | [Rate- and torque-limited eigenaxis slew with reaction wheels: gyroscopic cancellation, braking-curve rate loop and bang-coast-bang bound](projects/017-eigenaxis-slew-control/) | C |
 | 018 | 2026-11-06 | Numerical methods | [Symplectic vs. RK4 propagation of a Molniya orbit: leapfrog and Yoshida-4 against exact Kepler f and g, with order, energy, angular momentum and reversibility checks](projects/018-symplectic-orbit-integrators/) | C++ |
 | 019 | 2026-11-07 | RF link budgets | [Mars X-band downlink over a synodic cycle: DSN 34 m link budget, BI-AWGN coding threshold, VDR pass volume and conjunction outage](projects/019-mars-xband-link-volume/) | Python |
+| 020 | 2026-11-07 | Spacecraft power systems | [LEO Li-ion battery sizing with a 2RC equivalent-circuit model: CC-CV charging to periodic steady state, DoD-driven string count, energy-balance and array-threshold checks](projects/020-leo-battery-sizing/) | Rust |
