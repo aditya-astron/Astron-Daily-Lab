@@ -1,0 +1,12 @@
+[package]
+name = "bdot_detumble"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[profile.release]
+opt-level = 3
+
+[profile.test]
+opt-level = 3
