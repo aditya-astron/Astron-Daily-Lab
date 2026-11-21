@@ -1,0 +1,41 @@
+Cell: Q = 3.0 Ah, R0 = 30 mOhm, tau1 = 30 s, tau2 = 1000 s
+Sensors: sigma_V = 2.0 mV, sigma_I = 10 mA white, bias ~ N(0, 20 mA)
+
+1) Exact ZOH vs RK4 (100 substeps), 3 LEO orbits: max |dv| = 2.59e-15 V
+
+2) OCV slope and the SOC resolution of one voltage sample (sigma_V / slope)
+     SOC  |   NMC mV/%   1-sample %  |   LFP mV/%   1-sample %
+      10% |      14.80       0.135   |      11.52       0.174
+      30% |      10.79       0.185   |       0.89       2.240
+      50% |      11.15       0.179   |       0.51       3.889
+      70% |      14.20       0.141   |       0.53       3.787
+      90% |      21.11       0.095   |       4.60       0.434
+
+3) LEO cycling, 15 orbits (23.75 h), 100 runs per chemistry
+   initial SOC guess error 10 % (1 sigma); statistics over the last orbit
+
+   NMC
+   method                 RMS err %   max err %   mean sigma %   in 3 sigma
+   coulomb count             17.987      48.939         -            -
+   EKF, no bias state         0.063       0.212        0.004        14.3 %
+   EKF + bias                 0.003       0.012        0.003        99.7 %
+   EKF + bias, OCV init       0.003       0.012        0.003        99.7 %
+   EKF + bias           : NEES mean 3.64 / per-run median 3.23 (n = 4), runs > 3n: 0,
+                          worst run RMS 0.006 %, bias RMS 0.07 mA, median time to
+                          stay within 1 % SOC: 0 s
+   EKF + bias, OCV init : NEES mean 3.64 / per-run median 3.23 (n = 4), runs > 3n: 0,
+                          worst run RMS 0.006 %, bias RMS 0.07 mA, median time to
+                          stay within 1 % SOC: 0 s
+
+   LFP
+   method                 RMS err %   max err %   mean sigma %   in 3 sigma
+   coulomb count             17.987      48.939         -            -
+   EKF, no bias state         0.538       1.794        0.011         4.9 %
+   EKF + bias                 0.044       0.190        0.010        82.9 %
+   EKF + bias, OCV init       0.009       0.030        0.010       100.0 %
+   EKF + bias           : NEES mean 55.64 / per-run median 3.56 (n = 4), runs > 3n: 21,
+                          worst run RMS 0.154 %, bias RMS 0.62 mA, median time to
+                          stay within 1 % SOC: 500 s
+   EKF + bias, OCV init : NEES mean 3.48 / per-run median 3.09 (n = 4), runs > 3n: 0,
+                          worst run RMS 0.018 %, bias RMS 0.08 mA, median time to
+                          stay within 1 % SOC: 0 s
