@@ -1,0 +1,59 @@
+1. Allen-Eggers closed forms vs. integrator (no gravity, flat, beta = 300 kg/m^2, rn = 0.5 m)
+    gamma  Ve km/s   peak g   rel err  h_gmax km  q MW/m2   rel err  Q MJ/m2   rel err
+     -3.0      7.8     8.30  -1.9e-13      45.58    1.911  -7.7e-12    169.5  -3.9e-11
+    -10.0      7.8    27.52  -8.9e-14      36.95    3.481  -5.6e-12     93.3  -3.2e-12
+    -45.0      7.8   112.07  -2.1e-12      26.84    7.025   9.1e-12     46.3  -6.6e-13
+     -3.0     11.0    16.50  -1.0e-12      45.58    5.361  -9.3e-12    337.2  -1.9e-11
+    -10.0     11.0    54.74  -5.5e-14      36.95    9.764  -7.8e-12    185.6  -1.5e-12
+    -45.0     11.0   222.89   3.7e-12      26.84   19.704  -7.3e-12     92.2  -3.7e-13
+
+2. Full model (gravity + curvature) vs. Allen-Eggers, Ve = 7.8 km/s, beta = 300, rn = 0.5
+    gamma  g full    g AE     err  q full    q AE     err h_q full  h_q AE
+     -1.5    8.52    4.15 +105.4%   1.614   1.352  +19.4%     54.7    58.5
+     -2.5    9.87    6.91  +42.7%   1.912   1.745   +9.6%     53.2    54.8
+     -5.0   15.55   13.81  +12.6%   2.592   2.466   +5.1%     49.3    49.8
+    -10.0   28.98   27.52   +5.3%   3.624   3.481   +4.1%     44.7    44.9
+    -20.0   56.18   54.21   +3.6%   5.083   4.886   +4.0%     39.9    40.0
+    -45.0  115.79  112.07   +3.3%   7.320   7.025   +4.2%     34.7    34.7
+    -90.0  163.76  158.49   +3.3%   8.714   8.354   +4.3%     32.2    32.3
+   Shallow entries: gravity and the falling-away surface steepen the path, so the vehicle
+   meets the dense layer steeper than gamma_e and AE badly underpredicts the load. Steep
+   entries: the closed forms run about 3 % low in g and 4 % low in flux, the kinetic
+   energy gravity adds on the way down (2 g dh / Ve^2 is about 3 % over 90 km).
+
+3. Ballistic trade (full model), rn = 0.5 m
+      Ve  beta  gamma  peak g  q MW/m2  Q MJ/m2  q>50% s h_qmax km
+     7.8   100   -2.0    9.06    1.013    109.7     94.3      61.9
+     7.8   100   -6.0   18.11    1.626     69.4     36.7      56.1
+     7.8   100  -20.0   56.04    2.924     39.2     11.4      47.8
+     7.8   300   -2.0    9.08    1.761    191.4     94.1      54.0
+     7.8   300   -6.0   18.15    2.827    120.9     36.6      48.2
+     7.8   300  -20.0   56.18    5.083     68.2     11.4      39.9
+     7.8  1000   -2.0    9.10    3.227    351.6     94.0      45.4
+     7.8  1000   -6.0   18.20    5.181    221.7     36.6      39.5
+     7.8  1000  -20.0   56.33    9.317    125.0     11.4      31.2
+    11.0   100   -2.0   skips out: min h 112.0 km, exit speed 10.99 km/s
+    11.0   100   -6.0   15.82    3.247    182.0     50.2      61.8
+    11.0   100  -20.0  104.94    7.900     78.5      8.5      48.2
+    11.0   300   -2.0   skips out: min h 112.0 km, exit speed 11.00 km/s
+    11.0   300   -6.0   12.16    5.100    347.0     61.4      55.7
+    11.0   300  -20.0  104.54   13.675    136.7      8.5      40.3
+    11.0  1000   -2.0   skips out: min h 112.0 km, exit speed 11.00 km/s
+    11.0  1000   -6.0    7.06    7.891    754.7     86.0      50.4
+    11.0  1000  -20.0  104.10   24.948    250.9      8.6      31.7
+   At 7.8 km/s peak g depends on Ve and gamma only (beta just moves where it happens),
+   peak flux grows as sqrt(beta sin gamma) and heat load as sqrt(beta / sin gamma): steep
+   entries give short intense pulses, shallow ones long soaks into the TPS. At 11 km/s the
+   speed is supercircular: a 2 deg ballistic entry skips straight out, and at 6 deg a
+   high-beta body penetrates deeper before it slows, trading peak g for flux and load.
+
+4. Equilibrium glide from 7.5 km/s to 1.5 km/s, beta = 400 kg/m^2
+    L/D  h0 km gamma0 deg  range km closed km     err  peak g   eq g
+    0.3   74.2     -0.469      2441      2261   +8.0%    2.46   3.28
+    1.0   83.0     -0.140      7727      7580   +1.9%    1.24   1.33
+    2.0   88.0     -0.070     15402     15211   +1.3%    1.04   1.05
+   'eq g' is the total aero load at Vf on the equilibrium path, its largest value; the
+   flown peaks stay under it. The closed form drops the g sin(gamma) energy gained while
+   sinking and the phugoid the start state excites; the range error is 1-2 % at L/D of
+   1-2 and 8 % at a capsule's 0.3, so treat it as a guide only for real gliders.
+
