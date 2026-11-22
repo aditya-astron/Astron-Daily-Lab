@@ -1,0 +1,9 @@
+[package]
+name = "habitat_co2"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[profile.test]
+opt-level = 3
