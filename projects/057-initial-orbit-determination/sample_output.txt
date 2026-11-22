@@ -1,0 +1,50 @@
+1. Reference examples
+   Gibbs (Curtis 5.1)        v2 = [-6.2174 -4.0122  1.599 ]  book [-6.2174 -4.0122  1.599 ]  coplanarity 1.26 arcsec
+   Herrick-Gibbs (Vallado 7-4) v2 = [-6.441557  3.77756  -1.720568]  book [-6.441557  3.777625 -1.720642]
+   Gauss (Curtis 5.11) root |r2| = 9240.7 km   r2 = [5658.4 6532.8 3270.4]
+   Gauss refined (5.12)  14 it  r2 = [5661.4 6537.  3269.3]  book [5662.1 6538.  3269. ]
+                                v2 = [-3.8836  5.1212 -2.243 ]  book [-3.8856  5.1214 -2.2433]
+   rounding the example's inputs by half a printed digit moves r2 by 1.03 km median, 2.81 km max: the ~1 km gap to the book is inside that
+
+2. Gibbs vs Herrick-Gibbs, 700 km SSO, equal spacing, sigma = 10 m per axis (2000 trials)
+   sep    dt     HG trunc   Gibbs exact   Gibbs RMS   HG RMS     (m/s)
+    0.25     4.1   6.18e-08   2.27e-07     686.405      2.975
+    0.50     8.2   9.90e-07   7.05e-07     167.769      1.464
+    1.00    16.5   1.58e-05   5.52e-08      41.670      0.752
+    2.00    32.9   2.53e-04   9.69e-10      10.700      0.374
+    3.00    49.4   1.28e-03   8.98e-10       4.850      0.247
+    5.00    82.3   9.88e-03   6.35e-11       1.696      0.150
+    8.00   131.7   6.46e-02   1.29e-10       0.671      0.111
+   12.00   197.5   3.26e-01   2.40e-11       0.307      0.331
+   20.00   329.2   2.48e+00   8.02e-12       0.118      2.485
+   30.00   493.9   1.23e+01   7.54e-12       0.058     12.280
+   45.00   740.8   5.91e+01   2.89e-12       0.033     59.118
+   central-difference noise floor at 1 deg: 0.744 m/s (3-axis RMS)
+   Herrick-Gibbs is better below ~12 deg separation, Gibbs above
+
+3. Gauss angles-only, 800 km x 65 deg LEO from a 24.65 N, 1.68 km site
+   pass above 15 deg: 520 s long, peak elevation 57.0 deg; sightings symmetric about culmination
+   exact sightings: series error, Curtis fixed point, Newton correction; then 1 arcsec noise, 500 trials (Newton), medians
+   spacing  D0      series   fixed point        Newton        |   |dr2|      |dv2|     |da|    fail
+       5 s  3.9e-06    0.008 km   10 it 2.3e-04 m   2 it 6.1e-05 m  |   59.749 km  468.64 m/s   973.24 km  0.0%
+      10 s  3.1e-05    0.031 km   11 it 2.1e-04 m   3 it 1.6e-05 m  |   13.862 km  108.67 m/s   232.79 km  0.0%
+      20 s  2.5e-04    0.125 km   12 it 2.9e-04 m   3 it 1.4e-06 m  |    3.446 km   27.11 m/s    57.84 km  0.0%
+      40 s  1.9e-03    0.501 km   13 it 3.8e-04 m   3 it 9.9e-07 m  |    0.920 km    7.31 m/s    15.68 km  0.0%
+      80 s  1.2e-02    2.003 km   15 it 1.6e-04 m   3 it 4.4e-07 m  |    0.195 km    1.58 m/s     3.34 km  0.0%
+     120 s  3.1e-02    4.511 km   15 it 3.1e-04 m   3 it 5.5e-08 m  |    0.094 km    0.78 m/s     1.65 km  0.0%
+     160 s  5.4e-02    8.026 km   16 it 1.5e-04 m   4 it 3.0e-08 m  |    0.063 km    0.55 m/s     1.17 km  0.0%
+   (half-pass length 260 s limits the widest spacing)
+
+4. Gauss angles-only, geosynchronous object, i = 3 deg, same site
+   elevation at the middle sighting 63.4 deg (a GEO object barely moves on the sky, so the whole night is usable)
+   exact sightings: series error, Curtis fixed point, Newton correction; then 1 arcsec noise, 300 trials (Newton), medians
+   spacing  D0      series   fixed point        Newton        |   |dr2|      |dv2|     |da|    fail
+    10 min  6.1e-06    8.159 km   76 it 1.5e-02 m   3 it 3.3e-06 m  |  589.620 km   43.94 m/s  2392.00 km  0.0%
+    30 min  1.6e-04   73.615 km   96 it 1.6e-02 m   4 it 2.0e-07 m  |   61.641 km    4.68 m/s   247.52 km  0.0%
+    60 min  1.3e-03  296.992 km  158 it 1.6e-02 m   4 it 7.4e-08 m  |   14.792 km    1.19 m/s    60.62 km  0.0%
+    90 min  4.3e-03  678.026 km    diverges          4 it 5.9e-08 m  |    6.365 km    0.54 m/s    27.02 km  0.0%
+   120 min  9.8e-03 1230.945 km    diverges          5 it 7.3e-09 m  |    3.137 km    0.30 m/s    14.48 km  0.0%
+   180 min  3.0e-02 2954.575 km    diverges          5 it 1.5e-08 m  |    1.008 km    0.14 m/s     5.98 km  0.0%
+   240 min  6.3e-02 5843.078 km    diverges          6 it 0.0e+00 m  |    0.393 km    0.09 m/s     3.04 km  0.0%
+   at 6 h spacing (180 deg of arc) the series start fails: no physical root of the Gauss polynomial
+
