@@ -1,0 +1,72 @@
+== Thruster (lumped feed + choked throat) ==
+throat d = 0.835 mm, K = 4.351e-07 kg/s/sqrt(Pa), Isp = 223.4 s
+  Pf bar   Pc bar      F N   mdot g/s
+     5.5    4.026   0.3660     0.1670
+     8.0    5.374   0.4886     0.2230
+    11.0    6.798   0.6180     0.2821
+    16.0    8.861   0.8056     0.3676
+    22.0   11.000   1.0000     0.4564
+    24.0   11.654   1.0594     0.4835
+
+== Propellant budget ==
+m0 = 180.0 kg, dV = 120 m/s -> usable 9.593 kg, loaded 9.889 kg (3 % residual), V_load = 9.85 L
+
+== Blowdown-ratio optimum for pressure-sized tanks (min P0*Vt) ==
+isothermal, with residual: closed form B* = 1.984886, golden search 1.984886
+adiabatic (n = 1.4), with residual: golden search B* = 2.1111 (no-residual closed form 2.1268)
+
+== Isothermal sizing across blowdown ratio (Pend = 5.5 bar) ==
+     B  P0 bar    Vt L    r mm    t_p mm    m_p kg      m kg   burn s
+ 1.500    8.25   28.96   190.5     0.132     0.266     1.212    12447  gauge
+ 1.985   10.92   19.55   167.1     0.153     0.238     0.933    11491  gauge
+ 2.500   13.75   16.22   157.0     0.181     0.248     0.824    10871  gauge
+ 3.000   16.50   14.63   151.7     0.210     0.269     0.769    10466  gauge
+ 3.500   19.25   13.67   148.3     0.239     0.293     0.735    10172  gauge
+ 4.000   22.00   13.03   146.0     0.269     0.319     0.712     9950  gauge
+ 4.360   23.98   12.69   144.7     0.291     0.339     0.699     9820  gauge
+Every case is gauge-limited, so the P0*Vt optimum does not govern here:
+shell mass ~ Vt^(2/3) and the smallest tank (highest B the thrusters take) wins.
+
+== Manoeuvre plan with ullage thermodynamics, B = 4.0 isothermal sizing ==
+900 s burns + 5400 s coasts, 4 thrusters firing together
+   h W/m2K  burns   Pmin bar     Tmin K     fire s     dV m/s
+  isotherm     12      5.500      293.1       9950     120.00
+      50.0     12      5.499      292.0       9954     120.00
+       5.0     12      5.496      285.6       9984     120.00
+       1.0     12      5.487      272.2      10055     120.00
+       0.0     15      3.159      168.4      13463     120.00
+
+tau = mg cv / (h A_g) at start (h = 5): 183 s
+
+Per-burn history, h = 5 W/m2K
+   #     t0 h    dur s   Pst bar  Pend bar   Tend K  Piso bar   dV m/s
+   1     0.00    900.0    22.000    14.987    288.2    15.187    17.31
+   2     1.75    900.0    15.247    12.056    290.6    12.115    14.40
+   3     3.50    900.0    12.164    10.278    291.5    10.298    12.67
+   4     5.25    900.0    10.336     9.067    292.0     9.073    11.49
+   5     7.00    900.0     9.103     8.179    292.3     8.179    10.61
+   6     8.75    900.0     8.203     7.494    292.5     7.491     9.93
+   7    10.50    900.0     7.511     6.947    292.6     6.943     9.37
+   8    12.25    900.0     6.960     6.498    292.7     6.493     8.91
+   9    14.00    900.0     6.508     6.120    292.8     6.116     8.52
+  10    15.75    900.0     6.128     5.798    292.8     5.793     8.18
+  11    17.50    900.0     5.805     5.519    292.9     5.514     7.89
+  12    19.25     84.5     5.524     5.496    292.9     5.500     0.73
+
+== Loaded pressure that holds the 5.5 bar floor (same tank) ==
+   h W/m2K     P0 bar    dP0 bar       eff. B
+      50.0     22.002      0.002        4.000
+       5.0     22.017      0.017        4.003
+       1.0     22.048      0.048        4.009
+       0.0         --  exceeds 24 bar thruster limit
+
+== Flow-rate sweep: when the ullage stops being isothermal ==
+Same tank and load, h = 5 W/m2K, one continuous burn to depletion. The gas
+lags the wall by about tau * (adiabatic cooling rate), so what matters is the
+expulsion time against tau = 183 s, not the burn plan.
+ F/thr N    t_exp s   Pmin bar     Tmin K     P0 bar      Vg0 L Vt L @22bar
+       1       9988      5.495      285.6     22.021      3.189       13.04
+       5       2024      5.473      272.2     22.109      3.206       13.06
+      10       1027      5.445      263.5     22.228      3.229       13.08
+      20        526      5.381      253.3     22.511      3.283       13.13
+      50        221      5.133      238.3     23.898      3.547       13.40
