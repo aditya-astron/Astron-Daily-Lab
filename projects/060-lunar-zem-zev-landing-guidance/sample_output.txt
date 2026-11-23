@@ -1,0 +1,45 @@
+Initial state r0 = [-2000.   400.  1500.] m, v0 = [ 45.  -5. -25.] m/s,  m0 = 12000.0 kg
+Thrust/weight at high gate: 2.32 lunar g
+
+Time-to-go trade (unconstrained energy-optimal arc)
+   Gamma      T [s]   J_E/T [m^2/s^4]   ideal |u| peak [m/s^2]   ideal dv [m/s]
+    0.05     70.04           4.636               2.997              146.47
+    0.20     68.77           4.726               3.076              144.66
+    0.50     66.59           4.903               3.224              141.62
+    1.00     63.71           5.192               3.448              137.80
+    2.00     59.59           5.753               3.839              132.87
+    5.00     52.63           7.393               4.764              127.72
+   20.00     41.06          15.554               7.655              139.29
+
+Nominal: Gamma = 0.5, T = 66.59 s
+        10 Hz, limited  miss    0.000 m  vf  0.0000 m/s  dv  141.63 m/s  prop   544.5 kg  peak thr  0.82  sat cyc    0  min alt     0.0 m
+         1 Hz, limited  miss    0.000 m  vf  0.0000 m/s  dv  141.64 m/s  prop   544.6 kg  peak thr  0.80  sat cyc    0  min alt     0.0 m
+      10 Hz, no limits  miss    0.000 m  vf  0.0000 m/s  dv  141.63 m/s  prop   544.5 kg  peak thr  0.82  sat cyc    0  min alt     0.0 m
+  rocket-equation check: m0 exp(-dv/ve) = 11455.5007 kg vs m_f = 11455.5007 kg
+
+Delta-v vs T on the ideal arc, against the full-thrust limit 3.753 m/s^2 at high-gate mass
+  T =  44.0 s  dv  133.16 m/s  peak |u| 6.679  SATURATES
+  T =  48.0 s  dv  128.54 m/s  peak |u| 5.650  SATURATES
+  T =  52.0 s  dv  127.59 m/s  peak |u| 4.869  SATURATES
+  T =  56.0 s  dv  129.51 m/s  peak |u| 4.267  SATURATES
+  T =  60.0 s  dv  133.32 m/s  peak |u| 3.796  SATURATES
+  T =  64.0 s  dv  138.17 m/s  peak |u| 3.424  ok
+  T =  70.0 s  dv  146.41 m/s  peak |u| 2.999  ok
+  T =  80.0 s  dv  161.31 m/s  peak |u| 2.528  ok
+  T = 100.0 s  dv  192.75 m/s  peak |u| 2.047  ok
+Shortest feasible T = 60.42 s (equivalent Gamma = 1.766); dv rises with T past the saturated region, so this edge is the
+lowest-dv time-to-go this guidance law can fly without saturating
+       best feasible T  miss    0.000 m  vf  0.0000 m/s  dv  133.80 m/s  prop   515.1 kg  peak thr  0.95  sat cyc    0  min alt     0.0 m
+  saving vs Gamma = 0.5: 7.83 m/s, 29.4 kg
+
+Shortening T until the engine saturates (10 Hz, limited)
+          T =  66.59 s  miss    0.000 m  vf  0.0000 m/s  dv  141.63 m/s  prop   544.5 kg  peak thr  0.82  sat cyc    0  min alt     0.0 m
+          T =  53.27 s  miss    9.953 m  vf  6.4944 m/s  dv  124.60 m/s  prop   480.4 kg  peak thr  1.00  sat cyc   86  min alt    -8.3 m
+          T =  43.28 s  miss  109.703 m  vf 25.7697 m/s  dv  112.48 m/s  prop   434.5 kg  peak thr  1.00  sat cyc  148  min alt   -85.6 m
+          T =  36.62 s  miss  220.229 m  vf 47.4477 m/s  dv  110.14 m/s  prop   425.6 kg  peak thr  1.00  sat cyc  185  min alt  -163.8 m
+          T =  33.29 s  miss  282.917 m  vf 64.1231 m/s  dv  109.30 m/s  prop   422.4 kg  peak thr  1.00  sat cyc  219  min alt  -203.5 m
+
+Stretching T: the min-energy arc hovers and spends propellant on gravity
+          T =  99.88 s  miss    0.000 m  vf  0.0000 m/s  dv  192.56 m/s  prop   734.2 kg  peak thr  0.51  sat cyc    0  min alt     0.0 m
+          T = 133.17 s  miss    0.000 m  vf  0.0000 m/s  dv  246.21 m/s  prop   930.7 kg  peak thr  0.53  sat cyc    0  min alt     0.0 m
+          T = 199.76 s  miss    0.000 m  vf  0.0000 m/s  dv  353.90 m/s  prop  1314.7 kg  peak thr  0.53  sat cyc    0  min alt    -4.4 m
