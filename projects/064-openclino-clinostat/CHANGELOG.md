@@ -1,0 +1,90 @@
+
+# Version 0.6.0 11/04/2025
+
+## taSPG Update
+
+This update implements the paper for partial gravity simulation:
+
+Kim, Park & Kim (2026), Scientific Reports
+https://doi.org/10.1038/s41598-026-40665-6
+
+- Add `generate_taspg_path.py` 
+- Fix doubling back from `sphere_path_to_clinostat()` output
+- Remove old `generate_random_walk_path.py`
+- Update example SPG image
+
+# Version 0.5.2 21/03/2025
+
+- Update `spin_degs()`
+  - Split the delay into `delay(stepDelayUs / 1000);` and `delayMicroseconds(stepDelayUs % 1000);` since delayMicroseconds is only accurate to 16,000 microseconds. [Reference](https://docs.arduino.cc/language-reference/en/functions/time/delayMicroseconds/?_gl=1*ow8df7*_up*MQ..*_ga*MTYzOTY1MTcxMS4xNzc0MDkyNTky*_ga_NEXN8H46L5*czE3NzQwOTI1ODkkbzEkZzAkdDE3NzQwOTI1ODkkajYwJGwwJGg1MjI2MjM3NDA.).
+  - Remove finalDelay as it is unnecessary.
+
+# Version 0.5.1 05/01/2026
+
+Fix new circuit image path.
+
+# Version 0.5.0 31/12/2025
+
+## Major Partial Gravity Simulation Update
+
+- Restructure to modular code `openclino.h` (header file), `openclino.cpp` (code), and `openclino.ino` (arduino).
+- MicroSD card.
+  - Add MicroSD card reader to optional circuit design image.
+  - Add MicroSD card debugging scripts `test_sd` and `test_path`.
+- Partial gravity.
+  - Add `void follow_path()` to `openclino.cpp`
+  - Add `src/openclino/partial_gravity/` scripts `generate_test_path.py` and `generate_random_walk_path.py`
+- Respective documentation updates for all above.
+- Remove vestigial `src/raspberry_pi` IMU code.
+- Add `.gitignore`.
+
+# Version 0.4.0 26/12/2025
+
+This update mainly replaces the 3D printed y_pulley with an off the shelf 30 tooth GT2 pulley.
+
+- y_pulley.3mf removed.
+- Build guide updated and admonition removed.
+- BOM updated respectively to move y_pulley from printed to bought parts.
+
+# Version 0.3.2 02/06/2025
+
+- Fix `calibrate_y_correction()`:
+  - Check for `0.0` for `calibrate_y_correction()`.
+- General comment additions.
+
+# Version 0.3.1 15/03/2025
+
+- Check for `NULL` input in `calibrate_y_correction()`.
+
+# Version 0.3.0 22/02/2025
+
+- Major refactor to functions `spin_degs()` and `spin_continuous()` now precompute compensation instead of relying on if statements.
+- `calibrate_y_correction()` added to measure `yCorrection` using user input.
+- `clockwise` functions removed for direction pin handling.
+- `RPM()` removed for now.
+- General docs updates.
+
+# Version 0.2.2 09/02/2025
+
+- Add `diagnose_rotation_error()` to measure `yCorrection`.
+- Restructure to include `openclino.ino` into the folder `openclino/` so arduino IDE.
+- Remove epsilon to `double yCorrection`.
+- update `interval` to double and `currentTime` measurements.
+
+# Version 0.2.1 01/12/2024
+
+- Fix `spin_continuous()` to not use `AccelStepper` and to compensate motors for each other.
+- Reset `epsilon` to 1.
+
+# Version 0.2.0 29/11/2024
+
+- Changed pulley diameters to pulley teeth
+- Added `float epsilon` for calibrating substeps.
+- Added circuit diagram.
+- Updated documentation and README.md
+- updated `spin_degs()` if statements and compensation.
+- Added unit tests `calibrate_pulley_teeth()` and `test_spin_degs_multi()`.
+
+# Version 0.1.0 22/11/2024
+
+Initial release. Development till 22/11/2024.
