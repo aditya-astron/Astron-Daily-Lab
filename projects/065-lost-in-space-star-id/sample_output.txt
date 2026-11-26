@@ -1,0 +1,33 @@
+Lost-in-space star ID: 5000-star isotropic catalog, 12 x 12 deg FOV, 1024 px
+focal length 4871.4 px, IFOV 42.34 arcsec/px, centroid sigma 0.10 px = 4.23 arcsec, eps 24.0 arcsec
+
+[1] pair catalog (sep < 16.91 deg diagonal)
+    pairs 271016, expected N(N-1)/2 (1-cos dmax)/2 = 270149  (0.32 %), built in 0.05 s, 7.6 MB
+
+[2] stars in frame: mean 17.34 (N Omega/4pi = 17.39), P(<4) 0.0000 (Poisson 0.0000)
+
+[3] k-vector vs binary search over 200000 random queries
+    index mismatches 0, superset elements trimmed per query 2.01
+    60 ns per k-vector query vs 392 ns for two binary searches (sink 1)
+    candidates per side query, mean over 20000 queries per band vs isotropic expectation:
+       0.5- 2.0 deg:   31.6  expected   31.6  (-0.06 %)
+       2.0- 5.0 deg:   88.4  expected   88.4  (-0.05 %)
+       5.0- 8.0 deg:  165.3  expected  164.3  (+0.61 %)
+       8.0-12.0 deg:  252.1  expected  252.1  (+0.04 %)
+      12.0-16.5 deg:  359.2  expected  357.3  (+0.53 %)
+
+[4] Pyramid, 0.10 px noise, 2000 frames per row
+    spikes  drop   correct    wrong  no-ID  mislabelled   ms/frame
+         0   0.0    100.00%       0      0            0       0.21
+         2   0.0    100.00%       0      0            0       0.27
+         5   0.0    100.00%       0      0            0       0.37
+        10   0.0    100.00%       0      0            0       0.55
+         5   0.2     99.95%       0      1            0       0.37
+        10   0.3     99.60%       0      8            1       0.81
+
+[5] attitude error vs QUEST covariance (3000 frames, no spikes)
+    sigma_px   RMS x / y / z (arcsec)        predicted x / y / z       correct  no-ID
+       0.05     0.54   0.54    6.52          0.54   0.54    6.54      100.00%      0
+       0.10     1.07   1.07   13.03          1.08   1.08   13.08      100.00%      0
+       0.30     3.22   3.21   39.11          3.23   3.23   39.23      100.00%      0
+       1.00    10.75  10.71  130.37         10.77  10.77  130.79      100.00%      0
