@@ -1,0 +1,54 @@
+Hand check, S = 1 V/ms, capacitive load only
+  Cg = Ig/S = 10.0 nF, ramp Vb/S = 28.0 ms
+  I = C S = 0.470 A, peak FET power C S Vb = 13.16 W
+  E = C Vb^2/2 = 0.18424 J
+  simulated  0.18424 J, final Vo 28.000000 V
+
+FET energy: simulation vs ramp closed forms (J)
+  case                       S V/s    sim       E_C+E_R+E_P  +stall    sim/cf
+  C only                       300   0.18424     0.18424   0.18424   1.0000
+  C only                      3000   0.18424     0.18424   0.18424   1.0000
+  C + 50 ohm                   300   0.42973     0.42815   0.42815   1.0037
+  C + 50 ohm                  3000   0.20881     0.20863   0.20863   1.0008
+  C + 120 W, power-good        300   0.19696     0.19644   0.19644   1.0027
+  C + 120 W, power-good       3000   0.18598     0.18546   0.18546   1.0028
+  C + 120 W, UVLO 18 V         300   1.31679     1.14496   1.30054   1.1501
+  C + 120 W, UVLO 18 V        3000   0.30285     0.28031   0.29191   1.0804
+
+Foster network check
+  10 W for    0.1 ms: stepped 0.615171 K, P Zth(t) 0.615171 K
+  10 W for    1.0 ms: stepped 2.370376 K, P Zth(t) 2.370376 K
+  10 W for   10.0 ms: stepped 6.306148 K, P Zth(t) 6.306148 K
+  10 W for  100.0 ms: stepped 11.414568 K, P Zth(t) 11.414568 K
+  Zth(inf) = 4.02 K/W junction to plate
+
+Slew sweep, 120 W converter, plate 60 C
+    S V/s   Cg nF   t_pg ms |  UVLO: E J   Ipk A   Tj C   dip V |  PG: E J   Ipk A   Tj C
+      100  100.00     403.6 |    3.581    7.02   107.3    0.76 |    0.221    4.32    61.3
+      200   50.00     203.6 |    1.882    7.06   100.0    0.74 |    0.203    4.32    62.0
+      500   20.00      83.6 |    0.865    7.17    90.6    0.70 |    0.192    4.32    63.9
+     1000   10.00      43.6 |    0.527    7.37    85.4    0.67 |    0.188    4.32    66.3
+     2000    5.00      23.6 |    0.359    7.77    83.6    0.60 |    0.187    4.32    69.6
+     5000    2.00      11.6 |    0.258    8.91    84.7    0.39 |    0.185    4.32    75.9
+    10000    1.00       7.6 |    0.223   10.76    87.4    0.09 |    0.185    4.73    84.0
+    20000    0.50       5.6 |    0.205   14.56    95.0    0.00 |    0.185    9.42    95.0
+
+Largest converter that starts within Tj 110 C
+  UVLO start, P =    60 W: best S =   1092 V/s, Tj =   74.5 C
+  UVLO start, P =   120 W: best S =   2068 V/s, Tj =   83.6 C
+  UVLO start, P =   200 W: best S =   5719 V/s, Tj =   93.9 C
+  UVLO start limit: 333 W (at S = 19231 V/s, inrush peak 26.2 A)
+  Power-good start: ramp heating does not depend on P; even 1 kW at 1 V/ms gives Tj = 66.3 C
+
+Gate capacitor pick, power-good gated, gate clamp within 100 ms at the slow corner
+  Cg   4.7 nF: S   1547..  2837 V/s, gate clamp at slow corner   30.3 ms ok
+  Cg   6.8 nF: S   1070..  1961 V/s, gate clamp at slow corner   41.9 ms ok
+  Cg  10.0 nF: S    727..  1333 V/s, gate clamp at slow corner   59.5 ms ok
+  Cg  15.0 nF: S    485..   889 V/s, gate clamp at slow corner   87.0 ms ok
+  Cg  22.0 nF: S    331..   606 V/s, gate clamp at slow corner  125.5 ms late
+  Cg  33.0 nF: S    220..   404 V/s, gate clamp at slow corner  186.0 ms late
+  Cg  47.0 nF: S    155..   284 V/s, gate clamp at slow corner  263.0 ms late
+  Chosen Cg = 15 nF
+  fast corner S = 889 V/s: power-good Tj 65.8 C, Ipk 4.32 A, E 0.189 J
+                       UVLO start Tj 86.0 C, Ipk 7.33 A, E 0.570 J
+  slow corner S = 485 V/s: UVLO start Tj 90.9 C
