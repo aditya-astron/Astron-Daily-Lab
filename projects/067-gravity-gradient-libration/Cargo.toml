@@ -1,0 +1,9 @@
+[package]
+name = "gg_libration"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[profile.test]
+opt-level = 3
