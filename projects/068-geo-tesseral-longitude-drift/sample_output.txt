@@ -1,0 +1,54 @@
+EGM96 4x4, GM = 3.986004415e+14 m^3/s^2, R = 6378136.3 m, synchronous radius 42164.173 km
+
+J2 = 1.082627e-03  J3 = -2.532656e-06  J4 = -1.619622e-06  lambda22 = -14.929 deg
+
+Equilibria, field to degree 2:
+    75.071 E  ( 75.071 E)  stable    d(lam_ddot)/d(lam) = -5.936e-05 1/day^2
+   165.071 E  (165.071 E)  unstable  d(lam_ddot)/d(lam) = +5.936e-05 1/day^2
+   255.071 E  (104.929 W)  stable    d(lam_ddot)/d(lam) = -5.936e-05 1/day^2
+   345.071 E  ( 14.929 W)  unstable  d(lam_ddot)/d(lam) = +5.936e-05 1/day^2
+
+Equilibria, field to degree 3:
+    75.060 E  ( 75.060 E)  stable    d(lam_ddot)/d(lam) = -7.160e-05 1/day^2
+   162.081 E  (162.081 E)  unstable  d(lam_ddot)/d(lam) = +6.582e-05 1/day^2
+   255.089 E  (104.911 W)  stable    d(lam_ddot)/d(lam) = -4.712e-05 1/day^2
+   348.597 E  ( 11.403 W)  unstable  d(lam_ddot)/d(lam) = +5.608e-05 1/day^2
+
+Equilibria, field to degree 4:
+    74.939 E  ( 74.939 E)  stable    d(lam_ddot)/d(lam) = -7.239e-05 1/day^2
+   161.904 E  (161.904 E)  unstable  d(lam_ddot)/d(lam) = +6.515e-05 1/day^2
+   254.906 E  (105.094 W)  stable    d(lam_ddot)/d(lam) = -4.796e-05 1/day^2
+   348.482 E  ( 11.518 W)  unstable  d(lam_ddot)/d(lam) = +5.522e-05 1/day^2
+
+  lon (E)   lam_ddot (deg/day^2)   a_T (m/s^2)   EW dv (m/s/yr)
+       0       +0.000645        -2.118e-08      0.669
+      30       +0.001777        -5.839e-08      1.843
+      60       +0.001004        -3.298e-08      1.041
+      90       -0.001049        +3.447e-08      1.088
+     120       -0.001983        +6.516e-08      2.056
+     150       -0.000776        +2.551e-08      0.805
+     180       +0.001045        -3.434e-08      1.084
+     210       +0.001624        -5.338e-08      1.684
+     240       +0.000709        -2.331e-08      0.736
+     270       -0.000680        +2.234e-08      0.705
+     300       -0.001420        +4.665e-08      1.472
+     330       -0.000896        +2.945e-08      0.929
+  peak |a_T| 6.546e-08 m/s^2 at 117 E -> 2.066 m/s/yr
+
+Free libration, released at rest (period in days):
+  well      release      1D model    3D orbit    diff
+    74.94 E  small-angle      738.5
+            +   1 deg        738.5       738.5   -0.002 %   (swing -1.0/+1.0 deg)
+            +  20 deg        767.7       767.7   -0.002 %   (swing -20.3/+20.0 deg)
+            +  60 deg       1145.3      1145.2   -0.002 %   (swing -65.8/+60.0 deg)
+   254.91 E  small-angle      907.3
+            +   1 deg        907.3       907.3   -0.002 %   (swing -1.0/+1.0 deg)
+            +  20 deg        928.7       928.6   -0.002 %   (swing -19.5/+20.0 deg)
+            +  60 deg       1141.8      1141.8   -0.002 %   (swing -55.4/+60.0 deg)
+
+East-west box keeping, +-0.05 deg, paired tangential burns, 3 years:
+  slot    predicted |a_T|*yr   simulated     cycle     burns   max excursion
+     30 E      1.843 m/s/yr       1.842      20.7 d     106     0.0480 deg
+     60 E      1.041 m/s/yr       1.041      27.7 d      80     0.0489 deg
+    100 E      1.652 m/s/yr       1.652      21.9 d     100     0.0482 deg
+    200 E      1.682 m/s/yr       1.682      21.7 d     100     0.0482 deg
